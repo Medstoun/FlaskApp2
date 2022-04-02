@@ -10,9 +10,9 @@ app.register_blueprint(main_blueprint)
 app.register_blueprint(loader_blueprint)
 
 
-@app.route("/uploads/images/<path:path>")
+@app.route("/uploads/<path:path>")
 def static_dir(path):
-    return send_from_directory("uploads/images ", path)
+    return send_from_directory("uploads", path)
 
 
 app.run()
